@@ -1,6 +1,12 @@
 {
   "name": "music-mist",
-  "private": true,
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "store.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
@@ -12,29 +18,30 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+    "serviceworker-webpack-plugin": "^1.0.0-alpha02",
+    "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "version": "1.0.0",
-  "main": "./frontend/music-mist.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "start": "webpack --watch --mode=development"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tianyou-Song/MusicMist.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tianyou-Song/MusicMist/issues"
   },
-  "homepage": "https://github.com/Tianyou-Song/MusicMist#readme"
+  "homepage": "https://github.com/Tianyou-Song/MusicMist#readme",
+  "engines": {
+    "node": "8.11.4",
+    "npm": "6.4.1"
+  }
 }
