@@ -8,9 +8,13 @@ import {
   HashRouter
 } from 'react-router-dom';
 
+import SignupContainer from './session/signup_container';
+
 const App  = () => {
   return (
-    <div>app</div>
+    <div>
+      <Route path='/signup' component={SignupContainer} />
+    </div>
   );
 };
 
