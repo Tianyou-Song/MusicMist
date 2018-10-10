@@ -6,6 +6,20 @@ export const postUser = user => {
   });
 };
 
+export const getUser = id => {
+  return $.ajax({
+    url: `/api/users/${id}`,
+    method: 'GET'
+  });
+};
+
+export const deleteUser = id => {
+  return $.ajax({
+    url: `/api/users/${id}`,
+    method: 'DELETE'
+  });
+};
+
 export const postSession = user => {
   return $.ajax({
     url: '/api/session',

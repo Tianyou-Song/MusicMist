@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import sessionReducer from './session';
+import entitiesReducer from './entities';
 
 export default combineReducers({
-  session: sessionReducer
+  session: sessionReducer,
+  entities: entitiesReducer
 });

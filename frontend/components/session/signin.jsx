@@ -1,12 +1,11 @@
 import React from 'react';
 
-class Signup extends React.Component {
+class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      email: '',
-      password: '',
+      password: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,23 +19,18 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
+    this.props.signin(this.state)
       .then(() => this.props.history.push('/')); //need other routes
   }
 
-  render () {
+  render() {
     return (
       <div className='session-form'>
-        <h2>Create account</h2>
+        <h2>Sign in</h2>
         <form>
           <label>Username:
             <input type='string' value={this.state.username}
               onChange={this.handleInput('username')} />
-          </label>
-
-          <label>Email:
-            <input type='string' value={this.state.email}
-              onChange={this.handleInput('email')} />
           </label>
 
           <label>Password:
@@ -44,11 +38,11 @@ class Signup extends React.Component {
               onChange={this.handleInput('password')} />
           </label>
 
-          <button onClick={this.handleSubmit}>Create account</button>
+          <button onClick={this.handleSubmit}>Sign in</button>
         </form>
       </div>
     );
   }
 }
 
-export default Signup;
+export default Signin;

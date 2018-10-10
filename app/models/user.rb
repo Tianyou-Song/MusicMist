@@ -23,8 +23,8 @@ class User < ApplicationRecord
   # activerecord associations
 
   def self.find_by_credentials(name, password)
-    user = User.find_by(name: name)
-    return nil unless uer
+    user = User.find_by(username: name)
+    return nil unless user
     user.is_password?(password) ? user : nil
   end
 
