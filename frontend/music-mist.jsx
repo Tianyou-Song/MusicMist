@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  ReactDOM.render(<Root>YOLO</Root>, root);
+  ReactDOM.render(<Root>react</Root>, root);
 });
