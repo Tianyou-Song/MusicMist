@@ -8,7 +8,9 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-import IntroContainer from './intro/intro_container';
+import {AuthRoute, ProtectedRoute} from '../utils/route_util';
+
+import SplashContainer from './splash/splash_container';
 import GreetingContainer from './greeting/greeting_container';
 import LogInContainer from './session/signin_container';
 import SignupContainer from './session/signup_container';
@@ -25,10 +27,10 @@ const App  = () => {
       </header>
       <main>
         <Switch>
-          <Route path='/stream' component={HomeContainer} />
-          <Route path='/login' component={LogInContainer} />
-          <Route path='/signup' component={SignupContainer} />
-          <Route exect path='/' component={IntroContainer} />
+          <ProtectedRoute path='/stream' component={HomeContainer} />
+          <AuthRoute path='/login' component={LogInContainer} />
+          <AuthRoute path='/signup' component={SignupContainer} />
+          <AuthRoute exect path='/' component={SplashContainer} />
         </Switch>
       </main>
       <footer>
