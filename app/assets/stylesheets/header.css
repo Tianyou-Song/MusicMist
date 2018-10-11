@@ -1,13 +1,17 @@
 header {
   width: 100%;
   background: #333;
-  height: 46px;
+  height: 47px;
   font: 100 14px/1.5 "Interstate", "Lucida Grande", Arial, sans-serif;
   text-decoration: none;
 }
 
+header * {
+  display: flex;
+  justify-content: space-between;
+}
+
 header * * {
-  padding: 15px;
   color: #ccc;
 }
 
@@ -15,28 +19,54 @@ header * *:hover {
   color: #fff;
 }
 
+.logged-in {
+  width: 1240px;
+  margin: auto;
+}
+
+.logged-out {
+  width: 1240px;
+  margin: auto;
+}
+
 .greeting-left {
-  float: left;
   padding: 0px;
   display: flex;
+  border-right: 1px solid #111;
+}
+
+.greeting-left * {
+  padding: 12px 30px 12px;
+}
+
+.logo-container {
+  background: linear-gradient(#f70,#f30) no-repeat;
+  padding: 0;
+  width: 70px;
+  height: 47px;
 }
 
 .header-link {
-  padding: 0px;
-  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 11px;
-  background-size: 48px 22px;
-  height: 46px;
+  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 12px;
+  height: 0;
+  padding-top: 47px;
   width: 69px;
 }
 
 .greeting-right {
-  float: right;
   padding: 0px;
   display: flex;
 }
 
+.greeting-right * {
+  padding: 12px 10px 12px;
+}
+
 .user-dropdown ul {
-  background-color: black;
+  background-color: #111;
+  position: absolute;
+  top: 46px;
+  right: 0px;
 }
 
 .user-dropdown-ul-hidden {
