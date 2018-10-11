@@ -19,11 +19,9 @@ header * *:hover {
   float: left;
   padding: 0px;
   display: flex;
-  width:
 }
 
 .header-link {
-  /* font: 0/0 a; */
   padding: 0px;
   background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 11px;
   background-size: 48px 22px;
@@ -48,10 +46,3 @@ header * *:hover {
 .user-dropdown:hover {
   cursor: pointer;
 }
-
-/* .user-dropdown:hover ul {
-  display: block;
-  position: absolute;
-  top: 46px;
-  right: 0px;
-} */
