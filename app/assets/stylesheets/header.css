@@ -1,0 +1,57 @@
+header {
+  width: 100%;
+  background: #333;
+  height: 46px;
+  font: 100 14px/1.5 "Interstate", "Lucida Grande", Arial, sans-serif;
+  text-decoration: none;
+}
+
+header * * {
+  padding: 15px;
+  color: #ccc;
+}
+
+header * *:hover {
+  color: #fff;
+}
+
+.greeting-left {
+  float: left;
+  padding: 0px;
+  display: flex;
+  width:
+}
+
+.header-link {
+  /* font: 0/0 a; */
+  padding: 0px;
+  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 11px;
+  background-size: 48px 22px;
+  height: 46px;
+  width: 69px;
+}
+
+.greeting-right {
+  float: right;
+  padding: 0px;
+  display: flex;
+}
+
+.user-dropdown ul {
+  background-color: black;
+}
+
+.user-dropdown-ul-hidden {
+  display: none;
+}
+
+.user-dropdown:hover {
+  cursor: pointer;
+}
+
+/* .user-dropdown:hover ul {
+  display: block;
+  position: absolute;
+  top: 46px;
+  right: 0px;
+} */
