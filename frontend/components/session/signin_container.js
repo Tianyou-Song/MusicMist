@@ -2,6 +2,12 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/session';
 import Signin from './signin';
 
+// const mapStateToProps = (state) => {
+//   return {
+//     errors: state.errors.sessionErrors
+//   };
+// };
+
 const mapDispatchToProps = dispatch => {
   return {
     signin: formUser => dispatch(login(formUser))

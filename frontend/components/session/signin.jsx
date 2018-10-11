@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorsContainer from '../errors/errors_container';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class Signin extends React.Component {
   render() {
     return (
       <div className='session-form'>
+        <ErrorsContainer />
         <h2>Sign in</h2>
         <form>
           <label>Username:
