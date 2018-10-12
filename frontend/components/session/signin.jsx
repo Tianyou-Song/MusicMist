@@ -33,17 +33,13 @@ class Signin extends React.Component {
       <div className='session-form'>
         <ErrorsContainer />
         <form className='login-form'>
-          <label>Your Username:
-            <br/>
-            <input type='string' value={this.state.username}
-              onChange={this.handleInput('username')} />
-          </label>
+          <input type='string' value={this.state.username}
+            onChange={this.handleInput('username')}
+            placeholder='Your Username' />
 
-          <label>Your Password:
-            <br/>
-            <input type='password' value={this.state.password}
-              onChange={this.handleInput('password')} />
-          </label>
+          <input type='password' value={this.state.password}
+            onChange={this.handleInput('password')}
+            placeholder='Your Password' />
 
           <button onClick={this.handleSubmit}>Sign in</button>
         </form>

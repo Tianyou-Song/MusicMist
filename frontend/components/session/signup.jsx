@@ -50,7 +50,7 @@ class Signup extends React.Component {
               onChange={this.handleInput('password')} />
           </label>
 
-          <button onClick={this.handleSubmit}>Create account</button>
+          <button onClick={this.handleSubmit}>Continue</button>
         </form>
       </div>
     );

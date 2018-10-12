@@ -40,7 +40,6 @@ class Greeting extends React.Component {
           <div className='greeting-left'>
             <div className='logo-container'>
               <Link to='/' className='header-link'>
-                MusicMist
               </Link>
             </div>
             <Link to='/stream'>Home</Link>
@@ -51,10 +50,10 @@ class Greeting extends React.Component {
               {this.props.currentUser.username}
               <ul className={this.state.dropdownOpen ?
                   'user-dropdown-ul' : 'user-dropdown-ul-hidden'}>
-                <li>
+                <li className='dropdown-li'>
                   <Link to='/users/{this.props.currentUser.id}'>Profile</Link>
                 </li>
-                <li>
+                <li className='dropdown-li'>
                   <button onClick={this.props.logout}>Sign Out</button>
                 </li>
               </ul>

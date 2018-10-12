@@ -40,8 +40,6 @@ header * *:hover {
 
 .logged-in .header-link {
   background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 12px;
-  height: 0;
-  padding-top: 47px;
   width: 69px;
 }
 
@@ -55,10 +53,23 @@ header * *:hover {
 }
 
 .user-dropdown ul {
-  background-color: #111;
+  background: #333;
   position: absolute;
   top: 46px;
-  right: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-dropdown-ul {
+  padding: 0 !important;
+}
+
+.dropdown-li {
+  padding: 0 !important;
+}
+
+.dropdown-li Link {
+  padding: 0 !important;
 }
 
 .user-dropdown-ul-hidden {
@@ -83,8 +94,11 @@ header * *:hover {
 
 .logged-out .header-link {
   background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 12px;
-  text-align: right;
+  padding-left: 70px;
   width: 184px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .logged-out .greeting-right {

@@ -25,6 +25,7 @@
   padding: 7px 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 
 .login-form button {
@@ -37,5 +38,4 @@
   border-radius: 3px;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
