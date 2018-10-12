@@ -10,6 +10,7 @@ import {
 
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
 
+import RedirectToContainer from './redirect_to/redirect_to_container';
 import SplashContainer from './splash/splash_container';
 import GreetingContainer from './greeting/greeting_container';
 import LogInContainer from './session/signin_container';
@@ -27,7 +28,8 @@ const App  = () => {
           <ProtectedRoute path='/stream' component={HomeContainer} />
           <AuthRoute path='/login' component={LogInContainer} />
           <AuthRoute path='/signup' component={SignupContainer} />
-          <AuthRoute exect path='/' component={SplashContainer} />
+          <AuthRoute exact path='/' component={SplashContainer} />
+          <Route path='/' component={RedirectToContainer} />
         </Switch>
       </main>
       <footer>

@@ -30,38 +30,35 @@ class Signin extends React.Component {
   }
 
   guestLogin() {
-    this.setState({username: 'g'});
-    this.setState({username: 'gu'});
-    this.setState({username: 'gus'});
-    this.setState({username: 'guest'});
-    this.setState({password: 'p'});
-    this.setState({password: 'pa'});
-    this.setState({password: 'pas'});
-    this.setState({password: 'pass'});
-    this.setState({password: 'passw'});
-    this.setState({password: 'passwo'});
-    this.setState({password: 'passwor'});
-    this.setState({password: 'password'});
-    this.handleSubmit();
+    this.setState({
+      username: 'guest',
+      password: 'password'
+    })
+      .then(() => this.props.signin(this.state))
+      .then(() => this.props.history.push('/'));
   }
 
   render() {
     return (
-      <div className='session-form'>
-        <ErrorsContainer />
-        <form className='login-form'>
-          <input type='string' value={this.state.username}
-            onChange={this.handleInput('username')}
-            placeholder='Your Username' />
+      <div className='session-form-container'>
+        <div className='session-form'>
+          <ErrorsContainer />
+          <form className='login-form'>
+            <input type='string' value={this.state.username}
+              onChange={this.handleInput('username')}
+              placeholder='Your Username' />
 
-          <input type='password' value={this.state.password}
-            onChange={this.handleInput('password')}
-            placeholder='Your Password' />
+            <input type='password' value={this.state.password}
+              onChange={this.handleInput('password')}
+              placeholder='Your Password' />
 
-          <button onClick={this.handleSubmit}>Sign in</button>
-        </form>
+            <button onClick={this.handleSubmit}>Sign in</button>
+          </form>
 
-        <button onClick={this.guestLogin}>Demo Sign in</button>
+          <button className='demo-button'
+            onClick={this.guestLogin}>
+            Demo Sign in</button>
+        </div>
       </div>
     );
   }

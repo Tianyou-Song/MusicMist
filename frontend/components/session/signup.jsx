@@ -31,27 +31,29 @@ class Signup extends React.Component {
 
   render () {
     return (
-      <div className='session-form'>
-        <ErrorsContainer />
-        <h2>Create your MusicMist account</h2>
-        <form className='signup-form'>
-          <label>Your Email:
-            <input type='string' value={this.state.email}
-              onChange={this.handleInput('email')} />
-          </label>
+      <div className='session-form-container'>
+        <div className='session-form'>
+          <ErrorsContainer />
+          <h2>Create your MusicMist account</h2>
+          <form className='signup-form'>
+            <label>Your Email:
+              <input type='string' value={this.state.email}
+                onChange={this.handleInput('email')} />
+            </label>
 
-          <label>Choose a Username:
-            <input type='string' value={this.state.username}
-              onChange={this.handleInput('username')} />
-          </label>
+            <label>Choose a Username:
+              <input type='string' value={this.state.username}
+                onChange={this.handleInput('username')} />
+            </label>
 
-          <label>Choose a Password:
-            <input type='password' value={this.state.password}
-              onChange={this.handleInput('password')} />
-          </label>
+            <label>Choose a Password:
+              <input type='password' value={this.state.password}
+                onChange={this.handleInput('password')} />
+            </label>
 
-          <button onClick={this.handleSubmit}>Continue</button>
-        </form>
+            <button onClick={this.handleSubmit}>Continue</button>
+          </form>
+        </div>
       </div>
     );
   }
