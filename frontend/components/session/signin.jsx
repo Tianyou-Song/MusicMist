@@ -32,14 +32,15 @@ class Signin extends React.Component {
     return (
       <div className='session-form'>
         <ErrorsContainer />
-        <h2>Sign in</h2>
-        <form>
-          <label>Username:
+        <form className='login-form'>
+          <label>Your Username:
+            <br/>
             <input type='string' value={this.state.username}
               onChange={this.handleInput('username')} />
           </label>
 
-          <label>Password:
+          <label>Your Password:
+            <br/>
             <input type='password' value={this.state.password}
               onChange={this.handleInput('password')} />
           </label>
