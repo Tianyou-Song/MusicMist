@@ -56,20 +56,7 @@ header * *:hover {
   background: #333;
   position: absolute;
   top: 46px;
-  display: flex;
   flex-direction: column;
-}
-
-.user-dropdown-ul {
-  padding: 0 !important;
-}
-
-.dropdown-li {
-  padding: 0 !important;
-}
-
-.dropdown-li Link {
-  padding: 0 !important;
 }
 
 .user-dropdown-ul-hidden {

@@ -10,6 +10,7 @@ class Signin extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   componentDidMount() {
@@ -25,7 +26,23 @@ class Signin extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signin(this.state)
-      .then(() => this.props.history.push('/')); //need other routes
+      .then(() => this.props.history.push('/'));
+  }
+
+  guestLogin() {
+    this.setState({username: 'g'});
+    this.setState({username: 'gu'});
+    this.setState({username: 'gus'});
+    this.setState({username: 'guest'});
+    this.setState({password: 'p'});
+    this.setState({password: 'pa'});
+    this.setState({password: 'pas'});
+    this.setState({password: 'pass'});
+    this.setState({password: 'passw'});
+    this.setState({password: 'passwo'});
+    this.setState({password: 'passwor'});
+    this.setState({password: 'password'});
+    this.handleSubmit();
   }
 
   render() {
@@ -43,6 +60,8 @@ class Signin extends React.Component {
 
           <button onClick={this.handleSubmit}>Sign in</button>
         </form>
+
+        <button onClick={this.guestLogin}>Demo Sign in</button>
       </div>
     );
   }
