@@ -33,19 +33,19 @@ class Signup extends React.Component {
     return (
       <div className='session-form'>
         <ErrorsContainer />
-        <h2>Create account</h2>
-        <form>
-          <label>Username:
-            <input type='string' value={this.state.username}
-              onChange={this.handleInput('username')} />
-          </label>
-
-          <label>Email:
+        <h2>Create your MusicMist account</h2>
+        <form className='signup-form'>
+          <label>Your Email:
             <input type='string' value={this.state.email}
               onChange={this.handleInput('email')} />
           </label>
 
-          <label>Password:
+          <label>Choose a Username:
+            <input type='string' value={this.state.username}
+              onChange={this.handleInput('username')} />
+          </label>
+
+          <label>Choose a Password:
             <input type='password' value={this.state.password}
               onChange={this.handleInput('password')} />
           </label>
