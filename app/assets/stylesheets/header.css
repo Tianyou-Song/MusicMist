@@ -12,12 +12,12 @@ header * *:hover {
 }
 
 .logged-in {
-  width: 1240px;
+  max-width: 1240px;
   margin: auto;
 }
 
 .logged-out {
-  width: 1240px;
+  max-width: 1240px;
   margin: auto;
 }
 
@@ -52,24 +52,39 @@ header * *:hover {
   padding: 12px 10px 12px;
 }
 
-.user-dropdown ul {
+.logged-in .user-dropdown {
+  margin-right: 76px;
+}
+
+.logged-in .user-dropdown ul li {
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  padding: 0;
+  width: 120px;
+}
+
+.logged-in .user-dropdown ul li:hover {
+  background-color: #333;
+}
+
+.logged-in .user-dropdown ul {
+  padding: 0;
   background: #333;
   position: absolute;
   top: 46px;
   flex-direction: column;
+  background-color: #111;
 }
 
-.user-dropdown-ul-hidden {
+.user-dropdown-show {
+  background-color: #111;
+}
+
+.user-dropdown-hidden ul {
   display: none;
 }
 
 .user-dropdown:hover {
   cursor: pointer;
-}
-
-.logged-out {
-  width: 1240px;
-  margin: auto;
 }
 
 .logged-out .logo-container {

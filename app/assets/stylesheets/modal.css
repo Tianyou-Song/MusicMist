@@ -1,5 +1,12 @@
 .modal-form {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-form .session-form-container {
+  background-color: transparent;
 }
 
 .modal-screen {
@@ -12,10 +19,17 @@
   background: rgba(242,242,242,.9);
 }
 
-.modal-open {
-
-}
-
 .modal-close {
   display: none;
+}
+
+.modal-x {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  font-size: 27px;
+}
+
+.modal-x:hover {
+  cursor: pointer;
 }

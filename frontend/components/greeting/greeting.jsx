@@ -27,8 +27,10 @@ class Greeting extends React.Component {
             </div>
           </div>
           <div className='greeting-right'>
-            <Link className='login' to='/login'>Sign in</Link>
-            <Link className='signup' to='/signup'>Create account</Link>
+            <button onClick={() => this.props.openModal('signin')}
+              className='login'>Sign in</button>
+            <button onClick={() => this.props.openModal('signup')}
+              className='signup'>Create account</button>
           </div>
         </div>
       );
@@ -46,10 +48,12 @@ class Greeting extends React.Component {
           </div>
           <div className='greeting-right'>
             <Link to='/upload'>Upload</Link>
-            <div className='user-dropdown' onClick={this.dropdownClick()}>
+            <div className={this.state.dropdownOpen ?
+                'user-dropdown user-dropdown-show' :
+                'user-dropdown user-dropdown-hidden'}
+                onClick={this.dropdownClick()}>
               {this.props.currentUser.username}
-              <ul className={this.state.dropdownOpen ?
-                  'user-dropdown-ul' : 'user-dropdown-ul-hidden'}>
+              <ul>
                 <li className='dropdown-li'>
                   <Link to='/users/{this.props.currentUser.id}'>Profile</Link>
                 </li>

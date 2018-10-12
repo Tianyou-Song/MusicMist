@@ -5,6 +5,12 @@ import {
  } from '../../actions/session';
 import Signin from './signin';
 
+const mapStateToProps = state => {
+  return {
+    formType: 'signin'
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     clearErrors: () => dispatch(clearErrors()),

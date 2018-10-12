@@ -16,7 +16,7 @@ import GreetingContainer from './greeting/greeting_container';
 import LogInContainer from './session/signin_container';
 import SignupContainer from './session/signup_container';
 import HomeContainer from './home/home_container';
-// import ModalContainer from './session/modal_container';
+import ModalContainer from './session/modal_container';
 
 const App  = () => {
   return (
@@ -36,9 +36,9 @@ const App  = () => {
       <footer>
         player
       </footer>
+      <ModalContainer />
     </div>
   );
 };
-// <ModalContainer />
 
 export default App;

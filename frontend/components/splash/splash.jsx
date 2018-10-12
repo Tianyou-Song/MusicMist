@@ -8,7 +8,7 @@ class Splash extends React.Component {
 
   render() {
     return (
-      <div className='intro'>
+      <div className='splash'>
         <h2>Welcome to MusicMist</h2>
       </div>
     );

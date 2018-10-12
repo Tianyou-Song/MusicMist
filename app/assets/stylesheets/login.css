@@ -1,6 +1,6 @@
 .session-form-container {
   height: 700px;
-  width: 1240px;
+  max-width: 1240px;
   margin: auto;
   background: white;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
