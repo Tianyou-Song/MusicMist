@@ -5,12 +5,6 @@ import {
  } from '../../actions/session';
 import Signin from './signin';
 
-// const mapStateToProps = (state) => {
-//   return {
-//     errors: state.errors.sessionErrors
-//   };
-// };
-
 const mapDispatchToProps = dispatch => {
   return {
     clearErrors: () => dispatch(clearErrors()),

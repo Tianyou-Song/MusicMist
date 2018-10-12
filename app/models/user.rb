@@ -20,7 +20,9 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
-  # activerecord associations
+  has_many :uploaded_songs,
+    foreign_key: :uploader_id,
+    class_name: 'Song'
 
   def self.find_by_credentials(name, password)
     user = User.find_by(username: name)

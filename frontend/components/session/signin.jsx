@@ -33,9 +33,8 @@ class Signin extends React.Component {
     this.setState({
       username: 'guest',
       password: 'password'
-    })
-      .then(() => this.props.signin(this.state))
-      .then(() => this.props.history.push('/'));
+    }, function() {this.props.signin(this.state)
+      .then(() => this.props.history.push('/'));});
   }
 
   render() {
