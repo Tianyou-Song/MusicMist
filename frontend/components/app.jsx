@@ -20,7 +20,7 @@ import ModalContainer from './session/modal_container';
 
 const App  = () => {
   return (
-    <div>
+    <div className='app'>
       <header>
         <GreetingContainer />
       </header>
