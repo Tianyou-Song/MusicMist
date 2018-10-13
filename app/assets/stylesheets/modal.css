@@ -9,6 +9,10 @@
   background-color: transparent;
 }
 
+.session-form-container .session-form {
+  background-color: #fff !important;
+}
+
 .modal-screen {
   position: fixed;
   top: 0;

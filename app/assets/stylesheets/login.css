@@ -20,9 +20,10 @@
 
 .session-form-logo {
   position: relative;
+  margin-top: 20px;
   height: 200px;
   width: 100%;
-  background: url(logo.png) no-repeat;
+  background: url('logo.png') no-repeat;
   background-size: 100%;
 }
 
