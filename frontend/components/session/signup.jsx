@@ -33,7 +33,7 @@ class Signup extends React.Component {
     return (
       <div className='session-form-container'>
         <div className='session-form'>
-          <ErrorsContainer />
+          <div className='session-form-logo' />
           <h2>Create your MusicMist account</h2>
           <form className='signup-form'>
             <label>Your Email:
@@ -53,6 +53,7 @@ class Signup extends React.Component {
 
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
+          <ErrorsContainer />
         </div>
       </div>
     );

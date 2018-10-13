@@ -1,5 +1,5 @@
 .session-form-container {
-  height: 700px;
+  height: 900px;
   max-width: 1240px;
   margin: auto;
   background: white;
@@ -12,15 +12,23 @@
 
 .session-form {
   width: 400px;
-  height: 620px;
+  height: 700px;
   margin: 30px auto;
   padding: 0 30px;
   border: 1px solid #e5e5e5;
 }
 
+.session-form-logo {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background: url(logo.png) no-repeat;
+  background-size: 100%;
+}
+
 .login-form {
   margin: auto;
-  margin-top: 200px;
+  /* margin-top: 200px; */
   width: 380px;
   display: flex;
   flex-direction: column;

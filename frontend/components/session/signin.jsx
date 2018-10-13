@@ -41,7 +41,7 @@ class Signin extends React.Component {
     return (
       <div className='session-form-container'>
         <div className='session-form'>
-          <ErrorsContainer />
+          <div className='session-form-logo' />
           <form className='login-form'>
             <input type='string' value={this.state.username}
               onChange={this.handleInput('username')}
@@ -57,6 +57,8 @@ class Signin extends React.Component {
           <button className='demo-button'
             onClick={this.guestLogin}>
             Demo Sign in</button>
+
+          <ErrorsContainer />
         </div>
       </div>
     );
