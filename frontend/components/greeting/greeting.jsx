@@ -47,7 +47,7 @@ class Greeting extends React.Component {
             <Link to='/stream'>Home</Link>
           </div>
           <div className='greeting-right'>
-            <Link to='/upload'>Upload</Link>
+            <Link className='greeting-upload' to='/upload'>Upload</Link>
             <div className={this.state.dropdownOpen ?
                 'user-dropdown user-dropdown-show' :
                 'user-dropdown user-dropdown-hidden'}

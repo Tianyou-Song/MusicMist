@@ -3,11 +3,11 @@ header * {
   justify-content: space-between;
 }
 
-header * * {
+header * {
   color: #ccc;
 }
 
-header * *:hover {
+header *:hover {
   color: #fff;
 }
 
@@ -52,7 +52,7 @@ header * *:hover {
   padding: 12px 10px 12px;
 }
 
-.logged-in .user-dropdown {
+.user-dropdown {
   margin-right: 76px;
 }
 
