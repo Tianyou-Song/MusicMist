@@ -12,6 +12,7 @@ header {
 header * {
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
 header * {
@@ -41,18 +42,18 @@ header *:hover {
 }
 
 .greeting-left * {
-  padding: 12px 30px 12px;
+  padding: 12px 32px 12px;
 }
 
 .logged-in .logo-container {
   background: linear-gradient(#f70,#f30) no-repeat;
   padding: 0;
-  width: 70px;
+  width: 69px;
   height: 100%;
 }
 
 .logged-in .header-link {
-  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 12px;
+  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 11px;
   width: 70px;
 }
 
