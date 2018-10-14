@@ -25,11 +25,13 @@ header *:hover {
 .logged-in {
   max-width: 1240px;
   margin: auto;
+  height: 100%;
 }
 
 .logged-out {
   max-width: 1240px;
   margin: auto;
+  height: 100%;
 }
 
 .greeting-left {
@@ -46,12 +48,12 @@ header *:hover {
   background: linear-gradient(#f70,#f30) no-repeat;
   padding: 0;
   width: 70px;
-  height: 47px;
+  height: 100%;
 }
 
 .logged-in .header-link {
   background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 12px;
-  width: 69px;
+  width: 70px;
 }
 
 .logged-in .greeting-right {
@@ -102,7 +104,7 @@ header *:hover {
   background: linear-gradient(#f70,#f30) no-repeat;
   padding: 0;
   width: 184px;
-  height: 47px;
+  height: 100%;
 }
 
 .logged-out .header-link {
