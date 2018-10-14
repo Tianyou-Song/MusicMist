@@ -109,8 +109,8 @@ header *:hover {
 }
 
 .logged-out .header-link {
-  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 12px;
-  padding-left: 70px;
+  background: url(https://a-v2.sndcdn.com/assets/images/header/cloud-e365a47.png) no-repeat 12px 11px;
+  padding-left: 75px;
   width: 184px;
   color: #fff;
   font-weight: bold;
