@@ -8,6 +8,7 @@
 #  uploader_id  :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  artist       :string
 #
 
 require 'test_helper'
