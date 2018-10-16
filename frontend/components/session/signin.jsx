@@ -59,6 +59,10 @@ class Signin extends React.Component {
             onClick={this.guestLogin}>
             Demo Sign in</button>
 
+          <button className='signin-switch'
+            onClick={() => this.props.openModal('signup')}>
+          Create account</button>
+
           <ErrorsContainer />
         </div>
       </div>

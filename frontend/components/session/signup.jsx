@@ -54,6 +54,11 @@ class Signup extends React.Component {
 
             <button onClick={this.handleSubmit}>Continue</button>
           </form>
+
+          <button className='signup-switch'
+            onClick={() => this.props.openModal('signin')}>
+          Sign in</button>
+
           <ErrorsContainer />
         </div>
       </div>
