@@ -7,9 +7,10 @@ import {
 } from '../../actions/song';
 import Show from './show';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    song: state.entities.songs[ownProps.match.params.trackId]
   };
 };
 
