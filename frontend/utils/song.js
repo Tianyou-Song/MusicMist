@@ -1,9 +1,11 @@
-export const createSong = song => {
-  console.log(song);
+export const createSong = formData => {
+  console.log(formData);
   return $.ajax({
     url: '/api/songs',
     method: 'POST',
-    data: {song}
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

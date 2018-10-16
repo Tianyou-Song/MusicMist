@@ -17,7 +17,7 @@ class Api::SongsController < ApplicationController
     if @song
       render :show
     else
-      render jsong: ['Song not found'], status: 404
+      render json: ['Song not found'], status: 404
     end
   end
 

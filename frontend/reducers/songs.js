@@ -11,7 +11,7 @@ export default (state = {}, action) => {
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_SONG:
-      newState[action.song.id] = action.song;
+      merge(newState, action.song);
       return newState;
     case RECEIVE_SONGS:
       return merge(newState, action.songs);

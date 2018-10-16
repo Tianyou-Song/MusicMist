@@ -10,12 +10,11 @@ class Upload extends React.Component {
     this.state = {
       title: '',
       artist: '',
-      uploader_id: this.props.currentUser.id,
       audioUrl: '',
       audio: null,
       coverUrl: '',
       cover: null,
-      background: 'linear-gradient(135deg,#8e8485,#846170)'
+      background: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,13 +34,13 @@ class Upload extends React.Component {
         audio: file,
         audioUrl: reader.result
       });
-
-      if (file) {
-        reader.readAsDataURL(file);
-      } else {
-        this.setState({audioURL: '', audio: null});
-      }
     };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({audioURL: '', audio: null});
+    }
   }
 
   handleCover(e) {
@@ -50,16 +49,18 @@ class Upload extends React.Component {
     reader.onloadend = () => {
       this.setState({
         cover: file,
-        coverUrli: reader.result,
-        background: `url(${this.state.album_url})`
+        coverUrl: reader.result
       });
-
-      if (file) {
-        reader.readAsDataURL(file);
-      } else {
-        this.setState({coverURL: '', cover: null});
-      }
+      this.setState({
+        background: `url(${this.state.coverUrl})`
+      });
     };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({coverUrl: '', cover: null});
+    }
   }
 
   handleInput(type) {
@@ -71,27 +72,47 @@ class Upload extends React.Component {
   }
 
   handleSubmit(e) {
+    this.props.clearErrors();
     e.preventDefault();
-    this.props.createSong(this.state)
-      .then(() => this.props.history.push('/stream'));
+    const formData = new FormData();
+    formData.append('song[title]', this.state.title);
+    formData.append('song[description]', this.state.description);
+    formData.append('song[uploader_id]', this.props.currentUser.id);
+
+    if (this.state.cover) {
+      formData.append('song[cover]', this.state.cover);
+    }
+
+    if (this.state.audio) {
+      formData.append('song[audio]', this.state.audio);
+    }
+
+    this.props.createSong(formData)
+      .then(() => {
+        return this.props.history.push(`/stream`);
+      });
   }
 
   render() {
     return (
       <div className='upload-form-container'>
-        <ErrorsContainer />
         <form className='upload-form' onSubmit={this.handleSubmit}>
           <div className='upload-form-audio'>
             <label>Choose a file to upload
-              <input type='file' accept='audio/*' />
+              <input type='file' accept='audio/*'
+                onChange={this.handleAudio} />
             </label>
           </div>
 
-          <div className='upload-form-image'
-            style={{backgroundImage: this.state.backgroundImage}}>
-            <label className='upload-image-button'>Update image
-              <input type='file' accept='image/*'/>
-            </label>
+          <div className='upload-image-container'>
+            <div className='cover-image-container'>
+              <div className='cover-image' style={{background: this.state.background}}>
+                <label className='upload-image-button'>Update image
+                  <input type='file' accept='image/*'
+                    onChange={this.handleCover} />
+                </label>
+              </div>
+            </div>
           </div>
 
           <label>Title
@@ -109,6 +130,7 @@ class Upload extends React.Component {
           <Link to='/stream'>Cancel</Link>
           <button onClick={this.handleSubmit}>Save</button>
         </form>
+        <ErrorsContainer />
       </div>
     );
   }

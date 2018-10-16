@@ -1,5 +1,8 @@
 .errors {
   color: red;
   position: absolute;
+  margin: auto;
   margin-top: 15px;
+  width: 400px;
+  text-align: center;
 }
