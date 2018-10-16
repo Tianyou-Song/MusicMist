@@ -2,8 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_CURRENT_USER } from '../actions/session';
 
-const usersReducer = (state = {}, action) => {
-  console.log(action);
+export default (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -12,5 +11,3 @@ const usersReducer = (state = {}, action) => {
       return state;
   }
 };
-
-export default usersReducer;

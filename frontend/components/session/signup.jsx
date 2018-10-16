@@ -13,7 +13,7 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentWillUnmount() {
     this.props.clearErrors();
   }
 
@@ -24,12 +24,13 @@ class Signup extends React.Component {
   }
 
   handleSubmit(e) {
+    this.props.clearErrors();
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/')); //need other routes
+      .then(() => this.props.history.push('/stream'));
   }
 
-  render () {
+  render() {
     return (
       <div className='session-form-container'>
         <div className='session-form'>

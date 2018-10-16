@@ -3,7 +3,7 @@ import Errors from './errors';
 
 const mapStateToProps = (state) => {
   return {
-    errors: state.errors.sessionErrors
+    errors: state.errors
   };
 };
 

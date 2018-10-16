@@ -1,7 +1,18 @@
-import { combineReducers } from 'redux';
+import union from 'lodash/union';
 
-import sessionErrors from './sessions_errors';
+import {
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS
+} from '../actions/error';
 
-export default combineReducers({
-  sessionErrors
-});
+export default (state = [], action) => {
+  Object.freeze(state);
+  switch (action.type) {
+    case RECEIVE_ERRORS:
+      return union([], state, action.errors.responseJSON);
+    case CLEAR_ERRORS:
+      return [];
+    default:
+      return [];
+  }
+};

@@ -13,7 +13,7 @@ class Signin extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
-  componentDidMount() {
+  componentWillUnmount() {
     this.props.clearErrors();
   }
 
@@ -24,9 +24,10 @@ class Signin extends React.Component {
   }
 
   handleSubmit(e) {
+    this.props.clearErrors();
     e.preventDefault();
     this.props.signin(this.state)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/stream'));
   }
 
   guestLogin() {
@@ -34,7 +35,7 @@ class Signin extends React.Component {
       username: 'guest',
       password: 'password'
     }, function() {this.props.signin(this.state)
-      .then(() => this.props.history.push('/'));});
+      .then(() => this.props.history.push('/stream'));});
   }
 
   render() {

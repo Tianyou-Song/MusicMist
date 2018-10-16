@@ -9,6 +9,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  artist       :string
+#  description  :text
 #
 
 require 'test_helper'
