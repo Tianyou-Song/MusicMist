@@ -46,7 +46,7 @@ class Api::SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:title, :release_date, :uploader_id, :artist, :description)
+    params.require(:song).permit(:title, :description, :release_date, :uploader_id, :artist, :description, :cover, :audio)
   end
 
   def owner?(song)

@@ -52,16 +52,19 @@ class Signin extends React.Component {
               onChange={this.handleInput('password')}
               placeholder='Your Password' />
 
-            <button onClick={this.handleSubmit}>Sign in</button>
+            <button className='login-submit'
+              onClick={this.handleSubmit}>Sign in</button>
           </form>
 
           <button className='demo-button'
             onClick={this.guestLogin}>
             Demo Sign in</button>
 
-          <button className='signin-switch'
-            onClick={() => this.props.openModal('signup')}>
-          Create account</button>
+          <div className='signin-switch-container'>Don't have an account?
+            <button className='signin-switch'
+              onClick={() => this.props.openModal('signup')}>
+            Create account</button>
+        </div>
 
           <ErrorsContainer />
         </div>

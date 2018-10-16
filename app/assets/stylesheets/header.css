@@ -124,9 +124,14 @@ header *:hover {
 
 .login {
   padding: 2px 11px 2px 10px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #666;
   border-radius: 3px;
   margin: 10px;
+  color: #fff;
+}
+
+.login:hover {
+  border: 1px solid #fff;
 }
 
 .signup {
