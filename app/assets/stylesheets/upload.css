@@ -8,7 +8,7 @@
 .song-audio {
   width: 100%;
   text-align: center;
-  margin-top: 208px;
+  margin-top: 100px;
 }
 
 .song-audio-button {
@@ -28,6 +28,14 @@
   color: #333;
   margin-top: 28px;
   margin-bottom: 62px;
+}
+
+.song-ready {
+  height: 16px;
+  color: #666;
+  padding-bottom: 4px;
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  align-self: flex-start;
 }
 
 .song-info-container {

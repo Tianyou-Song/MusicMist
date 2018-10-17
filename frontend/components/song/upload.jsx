@@ -12,7 +12,8 @@ class Upload extends React.Component {
       audio: null,
       coverUrl: '',
       cover: null,
-      background: null
+      background: null,
+      ready: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,6 +30,9 @@ class Upload extends React.Component {
     const file = e.currentTarget.files[0];
     reader.onloadend = () => {
       this.setState({audio: file, audioUrl: reader.result});
+      this.setState({ready: 'Ready. Click Save to post this track.'});
+      const dotI = this.state.audio.name.indexOf('.');
+      this.setState({title: this.state.audio.name.slice(0, dotI)});
     };
 
     if (file) {
@@ -92,6 +96,7 @@ class Upload extends React.Component {
           </div>
         </div>
 
+        <div className='song-ready'>{this.state.ready}</div>
         <div className='song-info-container'>
           <div className='song-info-subcontainer'>
             <div className='song-info-title'>
