@@ -1,6 +1,6 @@
 .errors {
   color: red;
-  position: absolute;
+  position: relative;
   margin: auto;
   margin-top: 15px;
   width: 400px;
