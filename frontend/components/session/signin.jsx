@@ -26,50 +26,41 @@ class Signin extends React.Component {
   handleSubmit(e) {
     this.props.clearErrors();
     e.preventDefault();
-    this.props.signin(this.state)
-      .then(() => this.props.history.push('/stream'));
+    this.props.signin(this.state).then(() => this.props.history.push('/stream'));
   }
 
   guestLogin() {
     this.setState({
       username: 'guest',
       password: 'password'
-    }, function() {this.props.signin(this.state)
-      .then(() => this.props.history.push('/stream'));});
+    }, function() {
+      this.props.signin(this.state).then(() => this.props.history.push('/stream'));
+    });
   }
 
   render() {
-    return (
-      <div className='session-form-container'>
-        <div className='session-form'>
-          <div className='session-form-logo' />
-          <form className='login-form'>
-            <input type='string' value={this.state.username}
-              onChange={this.handleInput('username')}
-              placeholder='Your Username' />
+    return (<div className='session-form-container'>
+      <div className='session-form'>
+        <div className='session-form-logo'/>
+        <form className='login-form'>
+          <input type='string' value={this.state.username} onChange={this.handleInput('username')} placeholder='Your Username'/>
 
-            <input type='password' value={this.state.password}
-              onChange={this.handleInput('password')}
-              placeholder='Your Password' />
+          <input type='password' value={this.state.password} onChange={this.handleInput('password')} placeholder='Your Password'/>
 
-            <button className='login-submit'
-              onClick={this.handleSubmit}>Sign in</button>
-          </form>
+          <button className='login-submit' onClick={this.handleSubmit}>Sign in</button>
+        </form>
 
-          <button className='demo-button'
-            onClick={this.guestLogin}>
-            Demo Sign in</button>
+        <button className='demo-button' onClick={this.guestLogin}>
+          Demo Sign in</button>
 
-          <div className='signin-switch-container'>Don't have an account?
-            <button className='signin-switch'
-              onClick={() => this.props.openModal('signup')}>
+        <div className='signin-switch-container'>Don't have an account?
+          <button className='signin-switch' onClick={() => this.props.openModal('signup')}>
             Create account</button>
         </div>
 
-          <ErrorsContainer />
-        </div>
+        <ErrorsContainer/>
       </div>
-    );
+    </div>);
   }
 }
 

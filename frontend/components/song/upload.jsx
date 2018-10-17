@@ -1,8 +1,6 @@
 import React from 'react';
 import ErrorsContainer from '../errors/errors_container';
-import {
-  Link
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Upload extends React.Component {
   constructor(props) {
@@ -30,10 +28,7 @@ class Upload extends React.Component {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
     reader.onloadend = () => {
-      this.setState({
-        audio: file,
-        audioUrl: reader.result
-      });
+      this.setState({audio: file, audioUrl: reader.result});
     };
 
     if (file) {
@@ -47,13 +42,8 @@ class Upload extends React.Component {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
     reader.onloadend = () => {
-      this.setState({
-        cover: file,
-        coverUrl: reader.result
-      });
-      this.setState({
-        background: `url(${this.state.coverUrl})`
-      });
+      this.setState({cover: file, coverUrl: reader.result});
+      this.setState({background: `url(${this.state.coverUrl})`});
     };
 
     if (file) {
@@ -65,9 +55,7 @@ class Upload extends React.Component {
 
   handleInput(type) {
     return e => {
-      this.setState({
-        [type]: e.target.value
-      });
+      this.setState({[type]: e.target.value});
     };
   }
 
@@ -87,52 +75,67 @@ class Upload extends React.Component {
       formData.append('song[audio]', this.state.audio);
     }
 
-    this.props.createSong(formData)
-      .then(() => {
-        return this.props.history.push(`/stream`);
-      });
+    this.props.createSong(formData).then(() => {
+      return this.props.history.push(`/stream`);
+    });
   }
 
   render() {
-    return (
-      <div className='upload-form-container'>
-        <form className='upload-form' onSubmit={this.handleSubmit}>
-          <div className='upload-form-audio'>
-            <label>Choose a file to upload
-              <input type='file' accept='audio/*'
-                onChange={this.handleAudio} />
-            </label>
+    return (<div className='session-form-container'>
+      <form className='song-form' onSubmit={this.handleSubmit}>
+        <div className='song-audio'>
+          <label className='song-audio-button'>Choose a file to upload
+            <input className='hidden' type='file' accept='audio/*' onChange={this.handleAudio}/>
+          </label>
+          <div className='advice-text'>
+            Provide FLAC, WAV, ALAC or AIFF for best audio quality.
           </div>
+        </div>
 
-          <div className='upload-image-container'>
-            <div className='cover-image-container'>
-              <div className='cover-image' style={{background: this.state.background}}>
-                <label className='upload-image-button'>Update image
-                  <input type='file' accept='image/*'
-                    onChange={this.handleCover} />
+        <div className='song-info-container'>
+          <div className='song-info-subcontainer'>
+            <div className='song-info-title'>
+              <h1 className='song-info-title-main'>Track info</h1>
+              <div className='song-info-title-fill'/>
+            </div>
+            <div className='song-info'>
+              <div className='form-cover-container'>
+                <div className='cover-container'>
+                  <div className='cover' style={{
+                      background: this.state.background
+                    }}>
+                    <label className='upload-image-button'>Update image
+                      <input className='hidden' type='file' accept='image/*' onChange={this.handleCover}/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div className='form-fields-container'>
+                <label>Title<span className='orange'>*</span>
+                  <input type='string' value={this.state.title} onChange={this.handleInput('title')} placeholder='Name your track'/>
+                </label>
+                <label>Description
+                  <textarea value={this.state.description} onChange={this.handleInput('description')} placeholder='Describe your track'/>
                 </label>
               </div>
             </div>
           </div>
 
-          <label>Title
-            <input type='string' value={this.state.title}
-              onChange={this.handleInput('title')}
-              placeholder='Name your track' />
-          </label>
-
-          <label>Description
-            <textarea value={this.state.description}
-              onChange={this.handleInput('description')}
-              placeholder='Describe your track' />
-          </label>
-
-          <Link to='/stream'>Cancel</Link>
-          <button onClick={this.handleSubmit}>Save</button>
-        </form>
-        <ErrorsContainer />
-      </div>
-    );
+          <div className='song-form-bottom'>
+            <div className='require-notice'>
+              <span className='orange'>*</span>
+              Required fields
+            </div>
+            <div className='song-form-buttons'>
+              <Link to='/stream'>Cancel</Link>
+              <button className='song-form-save-button' onClick={this.handleSubmit}>Save</button>
+            </div>
+          </div>
+        </div>
+        <ErrorsContainer/>
+      </form>
+    </div>);
   }
 }
 
