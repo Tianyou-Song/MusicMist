@@ -76,8 +76,13 @@ header *:hover {
   width: 120px;
 }
 
+
 .logged-in .user-dropdown ul li:hover {
   background-color: #333;
+}
+
+.logged-in .user-dropdown ul li button {
+  width: 100%;
 }
 
 .logged-in .user-dropdown ul {

@@ -1,4 +1,5 @@
 export const createSong = formData => {
+  console.log(formData);
   return $.ajax({
     url: '/api/songs',
     method: 'POST',
@@ -22,11 +23,13 @@ export const fetchAllSongs = () => {
   });
 };
 
-export const updateSong = song => {
+export const updateSong = formData => {
   return $.ajax({
     url: `/api/songs/${song.id}`,
     method: 'PATCH',
-    data: {song}
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

@@ -101,7 +101,7 @@ class Edit extends React.Component {
 
   render() {
     return (<div className='session-form-container'>
-      <form className='song-form' onSubmit={this.handleSubmit}>
+      <form className='song-form'>
         <div className='song-audio'>
           <label className='song-audio-button'>Choose a file to upload
             <input className='hidden' type='file' accept='audio/*' onChange={this.handleAudio}/>

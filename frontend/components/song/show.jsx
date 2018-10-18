@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Howl, Howler} from 'howler';
 
 import {
   RECEIVE_SONG,
@@ -11,6 +12,7 @@ class Show extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.playAudio = this.playAudio.bind(this);
   }
 
   componentDidMount() {
@@ -48,6 +50,16 @@ class Show extends React.Component {
     }
   }
 
+  playAudio() {
+    const audio = new Howl({
+      src: [this.props.song.audio_url]
+    });
+
+    return (
+      <button onClick={audio.play}>play</button>
+    );
+  }
+
   render() {
     if (!this.props.song) {
       return null;
@@ -57,6 +69,7 @@ class Show extends React.Component {
       <div className='session-form-container'>
         <div className='song-show-top'>
           <div className='song-show-info'>
+            {this.playAudio()}
             <div>
               <div className='song-show-owner-username'>{this.props.song.uploader}</div>
             </div>
