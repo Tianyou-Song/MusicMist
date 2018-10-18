@@ -1,33 +1,31 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+
+import Edit from './edit';
 
 import {
   fetchSong,
-  deleteSong
+  updateSong
 } from '../../actions/song';
 import {
-  fetchUser
-} from '../../actions/user';
+  clearErrors
+} from '../../actions/error';
 import { openModal } from '../../actions/modal';
-import Show from './show';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
     song: state.entities.songs[ownProps.match.params.id],
-    users: state.entities.users
+    formType: 'edit'
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchSong: id => dispatch(fetchSong(id)),
-    deleteSong: id => dispatch(deleteSong(id)),
-    fetchUser: id => dispatch(fetchUser(id)),
+    updateSong: song => dispatch(updateSong(song)),
+    clearErrors: () => dispatch(clearErrors()),
     openModal: modal => dispatch(openModal(modal))
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Show)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(Edit);

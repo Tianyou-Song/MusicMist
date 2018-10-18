@@ -87,6 +87,7 @@ header *:hover {
   top: 46px;
   flex-direction: column;
   background-color: #111;
+  z-index: 999999;
 }
 
 .user-dropdown-show {

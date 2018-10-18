@@ -1,8 +1,7 @@
 import React from 'react';
 import ErrorsContainer from '../errors/errors_container';
-import {Link} from 'react-router-dom';
 
-class Upload extends React.Component {
+class Edit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +18,21 @@ class Upload extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAudio = this.handleAudio.bind(this);
     this.handleCover = this.handleCover.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchSong(this.props.match.params.id)
+      .then(res => {
+        const song = res.song;
+        this.props.fetchUser(Object.values(song)[0].uploader_id);
+        this.setState({
+          title: song.title,
+          description: song.description,
+          artist: song.artist,
+          coverUrl: song.cover_url,
+          audioUrl: song.audio_url
+        });
+      });
   }
 
   componentWillUnmount() {
@@ -79,7 +93,7 @@ class Upload extends React.Component {
       formData.append('song[audio]', this.state.audio);
     }
 
-    this.props.createSong(formData).then(res => {
+    this.props.updateSong(formData).then(res => {
       const songId = Object.keys(res.song)[0];
       return this.props.history.push(`/tracks/${songId}`);
     });
@@ -145,4 +159,4 @@ class Upload extends React.Component {
   }
 }
 
-export default Upload;
+export default Edit;

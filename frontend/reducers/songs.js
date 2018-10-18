@@ -11,12 +11,11 @@ export default (state = {}, action) => {
   const newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_SONG:
-      merge(newState, action.song);
-      return newState;
+      return merge(newState, action.song);
     case RECEIVE_SONGS:
       return merge(newState, action.songs);
     case DELETE_SONG:
-      delete newState[action.is];
+      delete newState[action.id];
       return newState;
     default:
       return newState;

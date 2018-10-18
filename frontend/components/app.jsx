@@ -19,6 +19,7 @@ import HomeContainer from './home/home_container';
 import ModalContainer from './session/modal_container';
 import SongUploadContainer from './song/upload_container';
 import SongShowContainer from './song/show_container';
+import SongEditContainer from './song/edit_container';
 
 const App  = () => {
   return (

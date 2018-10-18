@@ -1,5 +1,4 @@
 export const createSong = formData => {
-  console.log(formData);
   return $.ajax({
     url: '/api/songs',
     method: 'POST',
