@@ -6,7 +6,7 @@ header {
   text-decoration: none;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 2;
 }
 
 header.greeting-transparent {
@@ -38,6 +38,10 @@ header *:hover {
   max-width: 1240px;
   margin: auto;
   height: 100%;
+}
+
+.greeting-transparent .logged-out {
+  border-top: 4px solid #f50;
 }
 
 
@@ -114,6 +118,13 @@ header *:hover {
 
 .logged-out .logo-container {
   background: linear-gradient(#f70,#f30) no-repeat;
+  padding: 0;
+  width: 184px;
+  height: 100%;
+}
+
+.greeting-transparent .logged-out .logo-container {
+  background: transparent;
   padding: 0;
   width: 184px;
   height: 100%;
