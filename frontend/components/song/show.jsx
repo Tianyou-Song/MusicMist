@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {Howl, Howler} from 'howler';
 import ModalContainer from './modal_container';
+import ErrorsContainer from '../errors/errors_container';
 
 import {
   RECEIVE_SONG,
@@ -32,6 +33,7 @@ class Show extends React.Component {
   }
 
   handleDelete() {
+    this.props.clearErrors();
     if (this.props.currentUser && this.props.currentUser.id === this.props.song.uploader_id) {
       return (
         this.props.deleteSong(this.props.song.id)
@@ -63,7 +65,7 @@ class Show extends React.Component {
 
   render() {
     if (!this.props.song) {
-      return null;
+      return <ErrorsContainer />;
     }
 
     return (
@@ -92,6 +94,7 @@ class Show extends React.Component {
           <div className='song-show-description'>
             {this.props.song.description}
           </div>
+          <ErrorsContainer />
         </div>
         <ModalContainer />
       </div>

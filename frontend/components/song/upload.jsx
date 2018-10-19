@@ -1,7 +1,7 @@
 import React from 'react';
-import ErrorsContainer from '../errors/errors_container';
 import {Link} from 'react-router-dom';
 
+import ErrorsContainer from '../errors/errors_container';
 class Upload extends React.Component {
   constructor(props) {
     super(props);
