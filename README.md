@@ -22,6 +22,8 @@ MusicMist is a SoundCloud clone that allows users to share music. Users can crea
 
 If the user spam clicks the save button while their song is being submitted, multiple uploads are made. Therefore, the save button itself must be disabled while the upload is being processed.
 
+![alt text](https://github.com/Tianyou-Song/MusicMist/blob/master/app/assets/images/save-disable.png)
+
  ```jsx 
 handleSubmit(e) {
 	...
@@ -37,6 +39,8 @@ handleSubmit(e) {
 ### Dynamic Header 
 
 The header is transparent on the splash page, but not transparent anywhere else. The layout is also different depending on if the user is logged in or out.
+
+![alt text](https://github.com/Tianyou-Song/MusicMist/blob/master/app/assets/images/header-transparent.png)
 
 ```jsx 
 render () {
