@@ -24,9 +24,7 @@ import SongEditContainer from './song/edit_container';
 const App  = () => {
   return (
     <div className='app'>
-      <header>
-        <GreetingContainer />
-      </header>
+      <GreetingContainer />
       <main>
         <Switch>
           <ProtectedRoute path='/stream' component={HomeContainer} />

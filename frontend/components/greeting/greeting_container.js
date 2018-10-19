@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session';
 import { openModal } from '../../actions/modal';
 import Greeting from './greeting';
+import {withRouter} from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    isSplash: ownProps.location.pathname === '/'
   };
 };
 
@@ -17,4 +19,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Greeting));

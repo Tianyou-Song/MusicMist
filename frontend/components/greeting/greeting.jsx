@@ -18,52 +18,56 @@ class Greeting extends React.Component {
   render () {
     const loggedOut = () => {
       return (
-        <div className='logged-out'>
-          <div className='greeting-left'>
-            <div className='logo-container'>
-              <Link to='/' className='header-link'>
-                MusicMist
-              </Link>
+        <header className={this.props.isSplash ? 'greeting-transparent' : '' }>
+          <div className='logged-out'>
+            <div className='greeting-left'>
+              <div className='logo-container'>
+                <Link to='/' className='header-link'>
+                  MusicMist
+                </Link>
+              </div>
+            </div>
+            <div className='greeting-right'>
+              <button onClick={() => this.props.openModal('signin')}
+                className='login'>Sign in</button>
+              <button onClick={() => this.props.openModal('signup')}
+                className='signup'>Create account</button>
             </div>
           </div>
-          <div className='greeting-right'>
-            <button onClick={() => this.props.openModal('signin')}
-              className='login'>Sign in</button>
-            <button onClick={() => this.props.openModal('signup')}
-              className='signup'>Create account</button>
-          </div>
-        </div>
+        </header>
       );
     };
 
     const loggedIn = () => {
       return (
-        <div className='logged-in'>
-          <div className='greeting-left'>
-            <div className='logo-container'>
-              <Link to='/' className='header-link'>
-              </Link>
+        <header>
+          <div className='logged-in'>
+            <div className='greeting-left'>
+              <div className='logo-container'>
+                <Link to='/' className='header-link'>
+                </Link>
+              </div>
+              <Link to='/stream'>Home</Link>
             </div>
-            <Link to='/stream'>Home</Link>
-          </div>
-          <div className='greeting-right'>
-            <Link className='greeting-upload' to='/upload'>Upload</Link>
-            <div className={this.state.dropdownOpen ?
-                'user-dropdown user-dropdown-show' :
-                'user-dropdown user-dropdown-hidden'}
-                onClick={this.dropdownClick()}>
-              {this.props.currentUser.username}
-              <ul>
-                <li className='dropdown-li'>
-                  <Link to='/users/{this.props.currentUser.id}'>Profile</Link>
-                </li>
-                <li className='dropdown-li'>
-                  <button onClick={this.props.logout}>Sign Out</button>
-                </li>
-              </ul>
+            <div className='greeting-right'>
+              <Link className='greeting-upload' to='/upload'>Upload</Link>
+              <div className={this.state.dropdownOpen ?
+                  'user-dropdown user-dropdown-show' :
+                  'user-dropdown user-dropdown-hidden'}
+                  onClick={this.dropdownClick()}>
+                {this.props.currentUser.username}
+                <ul>
+                  <li className='dropdown-li'>
+                    <Link to='/users/{this.props.currentUser.id}'>Profile</Link>
+                  </li>
+                  <li className='dropdown-li'>
+                    <button onClick={this.props.logout}>Sign Out</button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </header>
       );
     };
 

@@ -53,11 +53,11 @@ class Show extends React.Component {
 
   playAudio() {
     const audio = new Howl({
-      src: [this.props.song.audio_url]
+      src: ['https://upload.wikimedia.org/wikipedia/commons/3/3c/01_-_Vivaldi_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg']
     });
 
     return (
-      <button onClick={audio.play}>play</button>
+      <button onClick={() => audio.play()}>play</button>
     );
   }
 
@@ -81,8 +81,7 @@ class Show extends React.Component {
           <div className='song-show-cover-container'>
             <div className='cover-container'>
               <div className='cover' style={{
-                  backgroundImage: `url(${this.props.song.cover_url})`,
-                  zIndex: 1
+                  backgroundImage: `url(${this.props.song.cover_url})`
                 }}>
               </div>
             </div>

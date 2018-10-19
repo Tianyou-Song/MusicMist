@@ -6,8 +6,13 @@ header {
   text-decoration: none;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
+header.greeting-transparent {
+  background: transparent;
+  position: absolute;
+}
 
 header * {
   display: flex;
@@ -34,6 +39,7 @@ header *:hover {
   margin: auto;
   height: 100%;
 }
+
 
 .greeting-left {
   padding: 0px;
@@ -92,7 +98,6 @@ header *:hover {
   top: 46px;
   flex-direction: column;
   background-color: #111;
-  z-index: 999999;
 }
 
 .user-dropdown-show {

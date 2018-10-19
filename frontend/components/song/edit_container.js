@@ -16,7 +16,6 @@ import {
 import { openModal } from '../../actions/modal';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
     currentUser: state.session.currentUser,
     song: state.entities.songs[ownProps.match.params.id],
