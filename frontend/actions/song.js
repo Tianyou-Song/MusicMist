@@ -45,9 +45,11 @@ export const fetchAllSongs = () => dispatch => SongAPIUtil.fetchAllSongs()
   .then(songs => dispatch(receiveSongs(songs)),
     errors => dispatch(receiveErrors(errors)));
 
-export const updateSong = song => dispatch => SongAPIUtil.updateSong(song)
-``.then(song => dispatch(receiveSong(song)),
-    errors => dispatch(receiveErrors(errors)));
+export const updateSong = song => dispatch => {
+  return SongAPIUtil.updateSong(song)
+  .then(song => dispatch(receiveSong(song)),
+  errors => dispatch(receiveErrors(errors)));
+};
 
 export const deleteSong = id => dispatch => SongAPIUtil.deleteSong(id)
   .then(song => dispatch(removeSong(song.id)));

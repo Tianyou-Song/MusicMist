@@ -1,5 +1,6 @@
 import React from 'react';
 import ErrorsContainer from '../errors/errors_container';
+import {Link} from 'react-router-dom';
 
 class Edit extends React.Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class Edit extends React.Component {
       ready: ''
     };
 
+    // this.state.title = this.props.song.title;
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAudio = this.handleAudio.bind(this);
     this.handleCover = this.handleCover.bind(this);
@@ -23,15 +26,20 @@ class Edit extends React.Component {
   componentDidMount() {
     this.props.fetchSong(this.props.match.params.id)
       .then(res => {
-        const song = res.song;
-        this.props.fetchUser(Object.values(song)[0].uploader_id);
+        const song = Object.values(res.song)[0];
+        this.props.fetchUser(song.uploader_id);
         this.setState({
           title: song.title,
-          description: song.description,
           artist: song.artist,
           coverUrl: song.cover_url,
-          audioUrl: song.audio_url
+          audioUrl: song.audio_url,
+          background: `url(${song.cover_url})`
         });
+        if (song.description) {
+          this.setState({
+            description: song.description
+          });
+        }
       });
   }
 
@@ -78,12 +86,16 @@ class Edit extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.clearErrors();
     e.preventDefault();
+    const saveButton = document.getElementById('song-form-save-button');
+    saveButton.disabled = true;
+    saveButton.classList.add('disabled');
+    this.props.clearErrors();
     const formData = new FormData();
     formData.append('song[title]', this.state.title);
     formData.append('song[description]', this.state.description);
     formData.append('song[uploader_id]', this.props.currentUser.id);
+    formData.append('song[id]', this.props.song.id);
 
     if (this.state.cover) {
       formData.append('song[cover]', this.state.cover);
@@ -101,18 +113,13 @@ class Edit extends React.Component {
 
   render() {
     return (<div className='session-form-container'>
-      <form className='song-form'>
-        <div className='song-audio'>
-          <label className='song-audio-button'>Choose a file to upload
-            <input className='hidden' type='file' accept='audio/*' onChange={this.handleAudio}/>
-          </label>
-          <div className='advice-text'>
-            Provide FLAC, WAV, ALAC or AIFF for best audio quality.
-          </div>
-        </div>
-
-        <div className='song-ready'>{this.state.ready}</div>
+      <form className='song-edit-form'>
         <div className='song-info-container'>
+          <div className='song-edit-audio'>
+            <label className='song-edit-audio-button'>Replace file
+              <input className='hidden' type='file' accept='audio/*' onChange={this.handleAudio}/>
+            </label>
+          </div>
           <div className='song-info-subcontainer'>
             <div className='song-info-title'>
               <h1 className='song-info-title-main'>Track info</h1>
@@ -149,7 +156,7 @@ class Edit extends React.Component {
             </div>
             <div className='song-form-buttons'>
               <Link to='/stream'>Cancel</Link>
-              <button className='song-form-save-button' onClick={this.handleSubmit}>Save</button>
+              <button id='song-form-save-button' onClick={this.handleSubmit}>Save changes</button>
             </div>
           </div>
         </div>

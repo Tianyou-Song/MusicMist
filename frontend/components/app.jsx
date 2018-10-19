@@ -35,7 +35,8 @@ const App  = () => {
           <AuthRoute path='/signup' component={SignupContainer} />
           <AuthRoute path='/register' component={SignupContainer} />
           <ProtectedRoute path='/upload' component={SongUploadContainer} />
-          <Route path='/tracks/:id' component={SongShowContainer} />
+          <Route exact path='/tracks/:id' component={SongShowContainer} />
+          <ProtectedRoute path='/tracks/:id/edit' component={SongEditContainer} />
           <AuthRoute exact path='/' component={SplashContainer} />
           <Route path='/' component={RedirectToContainer} />
         </Switch>

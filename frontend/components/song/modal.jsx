@@ -4,9 +4,7 @@ import {
   openModal,
   closeModal
 } from '../../actions/modal';
-import Signin from './signin_container';
-import Signup from './signup_container';
-import Edit from '../song/edit_container';
+import Edit from './edit_container';
 
 class Modal extends React.Component {
   render() {
@@ -16,11 +14,8 @@ class Modal extends React.Component {
 
     let component = null;
     switch (this.props.modal) {
-      case 'signin':
-        component = <Signin />;
-        break;
-      case 'signup':
-        component = <Signup />;
+      case 'edit':
+        component = <Edit />;
         break;
       default:
         return null;

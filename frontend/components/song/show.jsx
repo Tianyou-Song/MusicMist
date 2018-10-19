@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Howl, Howler} from 'howler';
+import ModalContainer from './modal_container';
 
 import {
   RECEIVE_SONG,
@@ -89,7 +90,11 @@ class Show extends React.Component {
         </div>
         <div className='song-show-bot'>
           {this.editInfo()}
+          <div className='song-show-description'>
+            {this.props.song.description}
+          </div>
         </div>
+        <ModalContainer />
       </div>
     );
   }

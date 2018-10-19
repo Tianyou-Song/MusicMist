@@ -1,0 +1,20 @@
+.song-edit-form {
+  margin-top: 100px;
+  background-color: #fff;
+}
+
+.song-edit-audio {
+  margin: 20px;
+}
+
+.song-edit-audio-button {
+  background-color: #f50;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 9px 2px 8px;
+  height: 22px;
+  line-height: 16px;
+}

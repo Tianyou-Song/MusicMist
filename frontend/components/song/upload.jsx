@@ -64,8 +64,11 @@ class Upload extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.clearErrors();
     e.preventDefault();
+    const saveButton = document.getElementById('song-form-save-button');
+    saveButton.disabled = true;
+    saveButton.classList.add('disabled');
+    this.props.clearErrors();
     const formData = new FormData();
     formData.append('song[title]', this.state.title);
     formData.append('song[description]', this.state.description);
@@ -135,7 +138,7 @@ class Upload extends React.Component {
             </div>
             <div className='song-form-buttons'>
               <Link to='/stream'>Cancel</Link>
-              <button className='song-form-save-button' onClick={this.handleSubmit}>Save</button>
+              <button id='song-form-save-button' onClick={this.handleSubmit}>Save</button>
             </div>
           </div>
         </div>

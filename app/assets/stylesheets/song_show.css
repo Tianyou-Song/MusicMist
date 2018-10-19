@@ -49,14 +49,16 @@
 }
 
 .song-show-bot {
-  margin-left: 20px;
-  margin-right: 20px;
   margin-top: 20px;
   width: 100%;
+  overflow: hidden;
 }
 
 .song-show-buttons {
   margin-left: 20px;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 10px;
 }
 
 .song-show-buttons button {
@@ -66,4 +68,12 @@
   font-size: 14px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   margin-right: 5px;
+}
+
+.song-show-description {
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  margin-left: 20px;
+  padding-top: 20px;
 }

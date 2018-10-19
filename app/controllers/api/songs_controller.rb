@@ -24,7 +24,7 @@ class Api::SongsController < ApplicationController
   end
 
   def update
-    @song = Song.find(params[:id])
+    @song = Song.find(params[:song][:id])
     if owner?(@song)
       if @song.update_attributes(song_params)
         render :show
