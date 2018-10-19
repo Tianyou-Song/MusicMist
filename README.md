@@ -3,7 +3,8 @@
 ## MusicMist 
 
 MusicMist is a SoundCloud clone that allows users to share music. Users can create, play, update, delete songs. [MusicMist Live](https://music-mist.herokuapp.com/)
-
+</br>
+</br>
 
 ## Technologies 
 
@@ -14,7 +15,8 @@ MusicMist is a SoundCloud clone that allows users to share music. Users can crea
 * PostgreSQL
 * AWS-S3 Storage
 * BCrypt
-
+</br>
+</br>
 
 ## Features 
 
@@ -34,7 +36,7 @@ handleSubmit(e) {
 }
 
  ```
-
+</br>
 
 ### Dynamic Header 
 
@@ -62,7 +64,8 @@ render () {
 
     return this.props.currentUser ? loggedIn() : loggedOut();
 ```
-
+</br>
+</br>
 
 ## Future Directions 
 
