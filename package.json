@@ -22,7 +22,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "serviceworker-webpack-plugin": "^1.0.0-alpha02",
-    "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },
