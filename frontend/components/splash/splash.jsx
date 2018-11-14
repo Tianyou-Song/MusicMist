@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
+import { SongIndexContainer } from '../song/index_container';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -20,6 +21,11 @@ class Splash extends React.Component {
               </div>
               <Link to='/signup' className='splash-top-signup'>Create an account today</Link>
             </div>
+          </div>
+          <div className='splash-bottom'>
+            <ul className='splash-song-list'>
+              <SongIndexContainer />
+            </ul>
           </div>
       </div>
     );

@@ -15,6 +15,14 @@ export const fetchSong = id => {
   });
 };
 
+export const searchSong = (params, limit) => {
+  return $.ajax({
+    url: '/api/songs',
+    method: 'GET',
+    data: { params, limit }
+  });
+};
+
 export const fetchAllSongs = () => {
   return $.ajax({
     url: '/api/songs',
