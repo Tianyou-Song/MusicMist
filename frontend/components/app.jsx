@@ -40,7 +40,6 @@ const App  = () => {
           <Route path='/' component={RedirectToContainer} />
         </Switch>
       </main>
-      <PlayerContainer />
       <ModalContainer />
     </div>
   );

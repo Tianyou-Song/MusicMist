@@ -20,7 +20,7 @@ class Greeting extends React.Component {
       return (
         <header className={this.props.isSplash ? 'greeting-transparent' : '' }>
           <div className='logged-out'>
-            <div className='greeting-left'>
+            <div className={this.props.isSplash ? 'greeting-left' : 'greeting-left-border' }>
               <div className='logo-container'>
                 <Link to='/' className='header-link'>
                   MusicMist
@@ -42,7 +42,7 @@ class Greeting extends React.Component {
       return (
         <header>
           <div className='logged-in'>
-            <div className='greeting-left'>
+            <div className={this.props.isSplash ? 'greeting-left' : 'greeting-left-border' }>
               <div className='logo-container'>
                 <Link to='/' className='header-link'>
                 </Link>

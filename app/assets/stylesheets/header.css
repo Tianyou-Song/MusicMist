@@ -48,6 +48,11 @@ header *:hover {
 .greeting-left {
   padding: 0px;
   display: flex;
+}
+
+.greeting-left-border {
+  padding: 0px;
+  display: flex;
   border-right: 1px solid #111;
 }
 
