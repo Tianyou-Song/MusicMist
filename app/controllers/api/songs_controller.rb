@@ -11,8 +11,17 @@ class Api::SongsController < ApplicationController
   end
 
   def index
+    songs = []
+    if params['search']
+      search_val = '%' + params['search'] + '%'
+      songs = Song.where('title LIKE ?', search_val).limit(params['limit'])
+      unless songs 
+        render json: ['No tracks found'], status: 404
+      end
+    else 
+      songs = Song.all.limit(params['limit'])
+    end 
     debugger
-    @songs = Song.all
   end
 
   def show
