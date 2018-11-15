@@ -40,8 +40,8 @@ export const fetchSong = id => dispatch => {
     errors => dispatch(receiveErrors(errors)));
 };
 
-export const searchSong = (params, limit) => dispatch => {
-  return SongAPIUtil.searchSong(params, limit)
+export const searchSongs = (params, limit) => dispatch => {
+  return SongAPIUtil.searchSongs(params, limit)
     .then(songs => dispatch(receiveSongs(songs)),
     errors => dispatch(receiveErrors(errors)));
 }

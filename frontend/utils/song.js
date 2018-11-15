@@ -15,7 +15,7 @@ export const fetchSong = id => {
   });
 };
 
-export const searchSong = (params, limit) => {
+export const searchSongs = (params, limit) => {
   return $.ajax({
     url: '/api/songs',
     method: 'GET',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
-import { SongIndexContainer } from '../song/index_container';
+import SongIndexContainer from '../song/index_container';
 
 class Splash extends React.Component {
   constructor(props) {

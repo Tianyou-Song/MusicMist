@@ -20,7 +20,7 @@ import ModalContainer from './session/modal_container';
 import SongUploadContainer from './song/upload_container';
 import SongShowContainer from './song/show_container';
 import SongEditContainer from './song/edit_container';
-import PlayerContainer from './player/player_container';
+// import PlayerContainer from './player/player_container';
 
 const App  = () => {
   return (
