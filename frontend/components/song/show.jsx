@@ -17,7 +17,7 @@ class Show extends React.Component {
     this.playAudio = this.playAudio.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchSong(this.props.match.params.id)
       .then(res => {
         const song = res.song;
