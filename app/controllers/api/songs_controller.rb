@@ -23,7 +23,7 @@ class Api::SongsController < ApplicationController
     else
       songs = Song.all
     end
-    @songs = songs.limit(params['limit'].to_i)
+    @songs = songs.shuffle[0...params['limit'].to_i]
   end
 
   def show
