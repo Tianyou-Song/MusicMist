@@ -55,7 +55,7 @@ class Show extends React.Component {
 
   playAudio() {
     const audio = new Howl({
-      src: ['https://upload.wikimedia.org/wikipedia/commons/3/3c/01_-_Vivaldi_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg']
+      src: [`${this.props.song.audio_url}`]
     });
 
     return (

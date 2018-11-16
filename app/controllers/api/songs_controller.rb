@@ -14,14 +14,16 @@ class Api::SongsController < ApplicationController
     songs = []
     if params['search']
       search_val = '%' + params['search'] + '%'
-      songs = Song.where('title LIKE ?', search_val).limit(params['limit'])
+      songs = Song.where('title LIKE ?', search_val)
       unless songs 
         render json: ['No tracks found'], status: 404
       end
-    else 
-      songs = Song.all.limit(params['limit'])
-    end 
-    debugger
+    elsif params['user'] 
+      songs = Song.find_by(uploader_id: params['user'].id)
+    else
+      songs = Song.all
+    end
+    @songs = songs.limit(params['limit'].to_i)
   end
 
   def show

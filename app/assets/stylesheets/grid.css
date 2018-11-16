@@ -1,0 +1,33 @@
+.grid-ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.grid-li {
+    margin: 10px;
+}
+
+.grid-cover-container {
+    width: 180px;
+    height: 180px;
+}
+
+.grid-song-title {
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #333;
+}
+
+.grid-song-title:hover {
+    color: #000;
+}
+
+.grid-song-uploader {
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #999;
+}
+
+.grid-song-uploader:hover {
+    color: #333;
+}

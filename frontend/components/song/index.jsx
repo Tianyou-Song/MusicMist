@@ -1,9 +1,10 @@
 import React from 'react';
+import SongGrid from './grid';
 
 class SongIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { songs: [] }
+        this.state = { songs: {} }
     }
 
     componentWillMount() {
@@ -14,7 +15,7 @@ class SongIndex extends React.Component {
 
     render() {
         return (
-            <p>asdf</p>
+            <SongGrid songs={this.state.songs} />
         );
     }
 }
