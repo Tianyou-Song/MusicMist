@@ -29,7 +29,6 @@ const App  = () => {
       <GreetingContainer />
       <main>
         <Switch>
-          <ProtectedRoute path='/stream' component={HomeContainer} />
           <AuthRoute path='/login' component={LogInContainer} />
           <AuthRoute path='/signin' component={LogInContainer} />
           <AuthRoute path='/signup' component={SignupContainer} />

@@ -27,7 +27,9 @@ class Signup extends React.Component {
     this.props.clearErrors();
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/stream'));
+      .then(res => {
+        this.props.history.push(`/users/${res.user.id}`)
+      });
   }
 
   render() {

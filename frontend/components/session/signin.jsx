@@ -26,7 +26,9 @@ class Signin extends React.Component {
   handleSubmit(e) {
     this.props.clearErrors();
     e.preventDefault();
-    this.props.signin(this.state).then(() => this.props.history.push('/stream'));
+    this.props.signin(this.state).then(res => {
+      this.props.history.push(`/users/${res.user.id}`);
+    });
   }
 
   guestLogin() {
@@ -34,7 +36,9 @@ class Signin extends React.Component {
       username: 'guest',
       password: 'password'
     }, function() {
-      this.props.signin(this.state).then(() => this.props.history.push('/stream'));
+      this.props.signin(this.state).then(res => {
+        this.props.history.push(`/users/${res.user.id}`);
+      });
     });
   }
 

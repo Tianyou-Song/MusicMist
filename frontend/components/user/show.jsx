@@ -13,6 +13,10 @@ class Show extends React.Component {
       }
 
     render() {
+        if (!this.props.shownUser) {
+            return <ErrorsContainer />
+        }
+        
         return(
             <p>{this.props.shownUser.username}</p>
         )

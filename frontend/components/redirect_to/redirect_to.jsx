@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 class RedirectTo extends React.Component {
   render() {
     if (this.props.currentUser) {
-      return <Redirect to='/stream' />;
+      return <Redirect to={'/users/' + this.props.currentUser.id} />;
     } else {
       return <Redirect to='/' />;
     }
