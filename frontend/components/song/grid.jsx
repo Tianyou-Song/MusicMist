@@ -27,7 +27,7 @@ class SongGrid extends React.Component {
                                 </div>
                                 <p class='grid-song-title'>{song.title}</p>
                             </Link>
-                            <Link to={`/`}>
+                            <Link to={`/users/` + song.uploader_id}>
                                 <p class='grid-song-uploader'>{song.uploader}</p>
                             </Link>
                         </li>

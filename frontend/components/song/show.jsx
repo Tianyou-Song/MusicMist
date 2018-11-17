@@ -74,7 +74,7 @@ class Show extends React.Component {
           <div className='song-show-info'>
             {this.playAudio()}
             <div>
-              <div className='song-show-owner-username'>{this.props.song.uploader}</div>
+              <Link to={'/users/' + this.props.song.uploader_id} className='song-show-owner-username'>{this.props.song.uploader}</Link>
             </div>
             <div>
               <div className='song-show-title'>{this.props.song.title}</div>
@@ -92,7 +92,7 @@ class Show extends React.Component {
         <div className='song-show-bot'>
           {this.editInfo()}
           <div className='song-show-description'>
-            {this.props.song.description}
+            { this.props.song.description === 'undefined' ? '' : this.props.song.description }
           </div>
           <ErrorsContainer />
         </div>

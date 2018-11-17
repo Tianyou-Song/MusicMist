@@ -16,9 +16,22 @@ class Show extends React.Component {
         if (!this.props.shownUser) {
             return <ErrorsContainer />
         }
-        
+
         return(
-            <p>{this.props.shownUser.username}</p>
+            <div className='session-form-container'>
+                <div className='user-show-top'>
+                    <div className='user-show-name'>{this.props.shownUser.username}</div>
+                </div>
+                <div className='user-show-bot'>
+                    <div className='user-show-bot-header'>
+                        <div className='user-show-bot-header-title'>
+                            <div className='user-show-bot-header-title-track'>
+                                Tracks
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
