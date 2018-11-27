@@ -12,10 +12,10 @@ class SongGrid extends React.Component {
 
     render() {
         return (
-            <ul class='grid-ul'>
+            <ul className='grid-ul'>
                 {this.shuffle(Object.values(this.props.songs)).map(song => {
                     return (
-                        <li class='grid-li' key={`${song.id}`}>
+                        <li className='grid-li' key={`${song.id}`}>
                             <Link to={`/tracks/${song.id}`}>
                                 <div className='grid-cover-container'>
                                         <div className='cover-container'>
@@ -25,10 +25,10 @@ class SongGrid extends React.Component {
                                             </div>
                                         </div>
                                 </div>
-                                <p class='grid-song-title'>{song.title}</p>
+                                <p className='grid-song-title'>{song.title}</p>
                             </Link>
                             <Link to={`/users/` + song.uploader_id}>
-                                <p class='grid-song-uploader'>{song.uploader}</p>
+                                <p className='grid-song-uploader'>{song.uploader}</p>
                             </Link>
                         </li>
                     )

@@ -24,7 +24,7 @@ class Splash extends React.Component {
           </div>
           <div className='splash-bottom'>
             <h2 className='splash-list-title'>Hear what’s trending for free in the MusicMist community</h2>
-            <SongIndexContainer />
+            <SongIndexContainer params='' />
           </div>
       </div>
     );

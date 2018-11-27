@@ -18,12 +18,14 @@ class Api::SongsController < ApplicationController
       unless songs 
         render json: ['No tracks found'], status: 404
       end
-    elsif params['user'] 
-      songs = Song.find_by(uploader_id: params['user'].id)
+      @songs = songs
+    elsif params['params']['user']
+      songs = Song.where('uploader_id = ?', params['params']['user']['id'])
+      @songs = songs
     else
       songs = Song.all
+      @songs = songs.shuffle[0...params['limit'].to_i]
     end
-    @songs = songs.shuffle[0...params['limit'].to_i]
   end
 
   def show

@@ -8,7 +8,7 @@ class SongIndex extends React.Component {
     }
 
     componentWillMount() {
-        this.props.searchSongs({}, 12).then(res => {
+        this.props.searchSongs(this.props.params, 12).then(res => {
             this.setState({ songs: res.songs })
         })
     }

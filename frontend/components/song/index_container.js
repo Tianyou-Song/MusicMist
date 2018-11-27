@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     songs: state.entities.songs,
-    users: state.entities.users
+    users: state.entities.users,
+    params: ownProps.params
   };
 };
 

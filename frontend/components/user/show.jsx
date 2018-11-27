@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ErrorsContainer from '../errors/errors_container';
+import SongIndexContainer from '../song/index_container';
 
 class Show extends React.Component {
 
@@ -29,6 +30,9 @@ class Show extends React.Component {
                                 Tracks
                             </div>
                         </div>
+                    </div>
+                    <div className='user-show-song-list'>
+                        <SongIndexContainer params={{'user': this.props.shownUser}} />
                     </div>
                 </div>
             </div>
