@@ -59,7 +59,7 @@ class Show extends React.Component {
     });
 
     return (
-      <button onClick={() => audio.play()}>play</button>
+      <button className='play-button' onClick={() => audio.play()}>play</button>
     );
   }
 
