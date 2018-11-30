@@ -6,7 +6,10 @@ import {
   clearErrors
 } from '../../actions/error';
 import Signin from './signin';
-import { openModal } from '../../actions/modal';
+import { 
+  openModal,
+  closeModal
+ } from '../../actions/modal';
 
 const mapStateToProps = state => {
   return {
@@ -18,7 +21,8 @@ const mapDispatchToProps = dispatch => {
   return {
     clearErrors: () => dispatch(clearErrors()),
     signin: formUser => dispatch(login(formUser)),
-    openModal: modal => dispatch(openModal(modal))
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

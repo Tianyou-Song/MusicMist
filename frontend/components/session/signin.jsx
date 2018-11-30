@@ -27,7 +27,9 @@ class Signin extends React.Component {
     this.props.clearErrors();
     e.preventDefault();
     this.props.signin(this.state).then(res => {
+      this.props.closeModal();
       this.props.history.push(`/users/${res.user.id}`);
+      
     });
   }
 
@@ -37,6 +39,7 @@ class Signin extends React.Component {
       password: 'password'
     }, function() {
       this.props.signin(this.state).then(res => {
+        this.props.closeModal();
         this.props.history.push(`/users/${res.user.id}`);
       });
     });

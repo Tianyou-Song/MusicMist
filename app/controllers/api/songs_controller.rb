@@ -15,7 +15,7 @@ class Api::SongsController < ApplicationController
     if params['search']
       search_val = '%' + params['search'] + '%'
       songs = Song.where('title LIKE ?', search_val)
-      unless songs 
+      unless songs
         render json: ['No tracks found'], status: 404
       end
       @songs = songs
