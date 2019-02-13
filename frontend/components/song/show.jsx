@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Howl, Howler} from 'howler';
 import ModalContainer from './modal_container';
 import ErrorsContainer from '../errors/errors_container';
+import SongShowTop from './show_top';
 
 import {
   RECEIVE_SONG,
@@ -12,9 +11,7 @@ import {
 class Show extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleDelete = this.handleDelete.bind(this);
-    this.playAudio = this.playAudio.bind(this);
   }
 
   componentWillMount() {
@@ -53,16 +50,6 @@ class Show extends React.Component {
     }
   }
 
-  playAudio() {
-    const audio = new Howl({
-      src: [`${this.props.song.audio_url}`]
-    });
-
-    return (
-      <button className='play-button' onClick={() => audio.play()}>play</button>
-    );
-  }
-
   render() {
     if (!this.props.song) {
       return <ErrorsContainer />;
@@ -70,25 +57,14 @@ class Show extends React.Component {
 
     return (
       <div className='session-form-container'>
-        <div className='song-show-top'>
-          <div className='song-show-info'>
-            {this.playAudio()}
-            <div>
-              <Link to={'/users/' + this.props.song.uploader_id} className='song-show-owner-username'>{this.props.song.uploader}</Link>
-            </div>
-            <div>
-              <div className='song-show-title'>{this.props.song.title}</div>
-            </div>
-          </div>
-          <div className='song-show-cover-container'>
-            <div className='cover-container'>
-              <div className='cover' style={{
-                  backgroundImage: `url(${this.props.song.cover_url})`
-                }}>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SongShowTop
+          song = {this.props.song}
+          playing = {this.props.playing}
+          currentSong = {this.props.currentSong}
+          play = {this.props.play}
+          pause = {this.props.pause}
+          playNew = {this.props.playNew}
+        />
         <div className='song-show-bot'>
           {this.editInfo()}
           <div className='song-show-description'>

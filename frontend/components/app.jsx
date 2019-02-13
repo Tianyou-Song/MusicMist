@@ -21,7 +21,7 @@ import SongUploadContainer from './song/upload_container';
 import SongShowContainer from './song/show_container';
 import SongEditContainer from './song/edit_container';
 import UserShowContainer from './user/show_container';
-// import PlayerContainer from './player/player_container';
+import PlayerContainer from './player/player_container';
 
 const App  = () => {
   return (
@@ -41,6 +41,7 @@ const App  = () => {
           <Route path='/' component={RedirectToContainer} />
         </Switch>
       </main>
+      <PlayerContainer />
       <ModalContainer />
     </div>
   );

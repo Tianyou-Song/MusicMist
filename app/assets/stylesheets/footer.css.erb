@@ -1,0 +1,38 @@
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  height: 47px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #cecece;
+}
+
+.player-container {
+  max-width: 1240px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+}
+
+.player-play, .player-pause {
+  width: 47px;
+  height: 100%;
+}
+
+.player-play {
+  background: url('<%= asset_path('player_play.png') %>');
+  background-size: cover;
+}
+
+.player-pause {
+  background: url('<%= asset_path('player_pause.png') %>');
+  background-size: cover;
+}
+
+.player-seek {
+  color: #f50;
+  font-size: 11px;
+  margin-top: 18px;
+}
+
+.
