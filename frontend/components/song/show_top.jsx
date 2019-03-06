@@ -27,18 +27,29 @@ class SongShowTop extends React.Component {
 
         return (
             <div className='song-show-top'>
-                <button
-                    className={playButtonClass}
-                    onClick={() => this.handlePlayButton()}
-                />
-                <div className='song-show-info'>
-                    <div>
-                        <Link to={'/users/' + this.props.song.uploader_id} className='song-show-owner-username'>{this.props.song.uploader}</Link>
+                <div className='song-show-top-left-container'>
+                    <div className='show-top-left'>
+                        <div className='show-play-button-container'>
+                            <button
+                                className={playButtonClass}
+                                onClick={() => this.handlePlayButton()}
+                            />
+                        </div>
+                        <div className='song-show-info'>
+                            <div>
+                                <Link to={'/users/' + this.props.song.uploader_id} className='song-show-owner-username'>{this.props.song.uploader}</Link>
+                            </div>
+                            <div>
+                                <div className='song-show-title'>{this.props.song.title}</div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <div className='song-show-title'>{this.props.song.title}</div>
+                    <div className='waveform-container'>
+                        
                     </div>
                 </div>
+                
+
                 <div className='song-show-cover-container'>
                     <div className='cover-container'>
                         <div className='cover' style={{

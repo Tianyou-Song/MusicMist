@@ -130,12 +130,11 @@ class Player extends React.Component {
   }
 
   calculateProgress() {
-    const percent = (this.audio.seek() / this.audio.duration()) * 100;
-    return `${percent}`;
+    let percent = (this.audio.seek() / this.audio.duration()) * 100;
+    return `${percent}%`;
   }
 
   render () {
-    console.log(this.playing);
     const playButtonText = this.playing ? "player-pause" : "player-play";
     const song = this.props.song ? this.getSong() : this.nullSong();
     const hiddenInfo = this.props.song ? null : { visibility: 'hidden'};
@@ -167,7 +166,7 @@ class Player extends React.Component {
           <p className='player-duration'>{this.state.duration}</p>
 
           <div className='player-info' style={hiddenInfo}>
-              <Link to={`/tracks/${song.id}`}>
+              <Link className='player-info-link' to={`/tracks/${song.id}`}>
                 <div className='player-cover-container'>
                   <div className='cover-container'>
                     <div className='cover' style={{

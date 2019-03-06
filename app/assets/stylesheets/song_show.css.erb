@@ -12,6 +12,22 @@
   height: 60px;
 }
 
+.song-show-top-left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.show-top-left {
+  display: flex;
+}
+
+.show-play-button-container {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 .song-show-top-play {
   background: url('<%= asset_path('show_play.png') %>');
   background-size: cover;
@@ -20,6 +36,15 @@
 .song-show-top-pause {
   background: url('<%= asset_path('show_pause.png') %>');
   background-size: cover;
+}
+
+.waveform-container {
+  background: url('<%= asset_path('waveform.png') %>');
+  background-size: cover;
+  height: 50%;
+  width: 80%;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .song-show-cover-container {
@@ -46,16 +71,6 @@
   padding: 2px 7px 3px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   display: inline-block;
-}
-
-.play-button {
-  color: white;
-  font-size: 24px;
-  text-align: center;
-  background-color: orange;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
 }
 
 .song-show-owner-username:hover {
