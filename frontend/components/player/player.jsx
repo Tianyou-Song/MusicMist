@@ -140,7 +140,7 @@ class Player extends React.Component {
   }
 
   render () {
-    const playButtonText = this.playing ? "player-pause" : "player-play";
+    const playButtonText = this.props.playing ? "player-pause" : "player-play";
     const song = this.props.song ? this.getSong() : this.nullSong();
     const hiddenInfo = this.props.song ? null : { visibility: 'hidden'};
     if (this.props.playing) {
