@@ -8,7 +8,8 @@ class SongShowTop extends React.Component {
     }
 
     handlePlayButton() {
-        if (this.props.currentSong === this.props.song) {
+        if (this.props.currentSong && this.props.currentSong.id === this.props.song.id) {
+            
             if (this.props.playing) {
                 
                 this.props.pause();
@@ -22,7 +23,13 @@ class SongShowTop extends React.Component {
     }
 
     render() {
-        const beingPlayed = this.props.currentSong === this.props.song ? true : false;
+        let beingPlayed;
+        if (!this.props.currentSong) {
+            beingPlayed = false;
+        } else {
+            beingPlayed = this.props.currentSong.id === this.props.song.id ? true : false;
+        }
+
         const playButtonClass = beingPlayed && this.props.playing ? 'song-show-top-pause' : 'song-show-top-play';
 
         return (
