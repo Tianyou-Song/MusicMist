@@ -125,8 +125,7 @@ class Player extends React.Component {
   handlePlayButton() {
     if (this.currentSong.id === null) {
       return null;
-    }
-    if (this.playing) {
+    } else if (this.playing) {
       this.props.pause();
       this.playing = false;
     } else {
@@ -141,7 +140,6 @@ class Player extends React.Component {
   }
 
   render () {
-    console.log(this.playing);
     const playButtonText = this.playing ? "player-pause" : "player-play";
     const song = this.props.song ? this.getSong() : this.nullSong();
     const hiddenInfo = this.props.song ? null : { visibility: 'hidden'};
